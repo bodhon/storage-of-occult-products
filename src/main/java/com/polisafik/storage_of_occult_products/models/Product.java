@@ -1,9 +1,6 @@
 package com.polisafik.storage_of_occult_products.models;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.annotations.UpdateTimestamp;
@@ -16,7 +13,7 @@ import java.time.LocalDateTime;
 import java.util.UUID;
 
 @Entity
-@Table(name = "Product")
+@Table(name = "product")
 @Getter
 @Setter
 @NoArgsConstructor
@@ -43,7 +40,7 @@ public class Product {
 
     @NotBlank(message = "Category cannot be blank")
     @Column(name = "category", nullable = false)
-    private String category;
+    private String category; // TODO: изменить
 
     @NotNull(message = "Price cannot be null")
     @DecimalMin(value = "0.0", inclusive = false, message = "Price must be greater than 0")
