@@ -30,12 +30,23 @@ public class ProductController {
 
     /**
      * Update an existing product.
-     * @param product the product to update
+     * @param id the UUID of the product
      * @return the updated product
      */
-    @PutMapping
-    public ResponseEntity<Product> updateProduct(@Valid @RequestBody Product product) {
-        return ResponseEntity.ok(productService.updateProduct(product));
+    @PutMapping("/{id}")
+    public ResponseEntity<Product> updateProduct(@PathVariable UUID id, @Valid @RequestBody Product productDetails) {
+        Product product = productService.getProduct(id).orElseThrow();
+        product.setName(productDetails.getName());
+        product.setSku(productDetails.getSku());
+        product.setDescription(productDetails.getDescription());
+        product.setCategory(productDetails.getCategory());
+        product.setPrice(productDetails.getPrice());
+        product.setQuantity(productDetails.getQuantity());
+        product.setLastModified(productDetails.getLastModified());
+        product.setDateCreated(productDetails.getDateCreated());
+
+        final Product updatedProduct = productService.createProduct(product);
+        return ResponseEntity.ok(updatedProduct);
     }
 
     /**

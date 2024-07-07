@@ -40,7 +40,7 @@ public class Product {
 
     @NotBlank(message = "Category cannot be blank")
     @Column(name = "category", nullable = false)
-    private String category; // TODO: изменить
+    private String category; // TODO: изменить на enum
 
     @NotNull(message = "Price cannot be null")
     @DecimalMin(value = "0.0", inclusive = false, message = "Price must be greater than 0")
