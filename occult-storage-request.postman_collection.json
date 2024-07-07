@@ -13,7 +13,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"name\": \"qweqwe\",\r\n    \"sku\": \"123\",\r\n    \"description\": \"qwe\",\r\n    \"category\": \"qwe\",\r\n    \"price\": \"123\",\r\n    \"quantity\": \"123\"\r\n}",
+					"raw": "{\r\n    \"name\": \"qweqwe\",\r\n    \"sku\": \"123\",\r\n    \"description\": \"qwe\",\r\n    \"category\": \"CRYSTALS\",\r\n    \"price\": \"123\",\r\n    \"quantity\": \"123\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -98,10 +98,32 @@
 			"response": []
 		},
 		{
-			"name": "New Request",
+			"name": "updateProduct",
 			"request": {
-				"method": "GET",
-				"header": []
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"qwe\",\r\n    \"sku\": \"12345\",\r\n    \"description\": \"qwe\",\r\n    \"category\": \"JEWELRY\",\r\n    \"price\": \"123\",\r\n    \"quantity\": \"123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/products/24757aa0-2bdf-4468-a93b-8db3e7d63f74",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"products",
+						"24757aa0-2bdf-4468-a93b-8db3e7d63f74"
+					]
+				}
 			},
 			"response": []
 		}

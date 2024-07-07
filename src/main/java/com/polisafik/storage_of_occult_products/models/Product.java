@@ -1,5 +1,6 @@
 package com.polisafik.storage_of_occult_products.models;
 
+import com.polisafik.storage_of_occult_products.models.enums.Category;
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.GenericGenerator;
@@ -40,7 +41,7 @@ public class Product {
 
     @NotBlank(message = "Category cannot be blank")
     @Column(name = "category", nullable = false)
-    private String category; // TODO: изменить на enum
+    private Category category;
 
     @NotNull(message = "Price cannot be null")
     @DecimalMin(value = "0.0", inclusive = false, message = "Price must be greater than 0")
