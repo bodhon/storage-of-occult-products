@@ -31,6 +31,7 @@ public class ProductController {
     /**
      * Update an existing product.
      * @param id the UUID of the product
+     * @param productDetails the product to update
      * @return the updated product
      */
     @PutMapping("/{id}")
